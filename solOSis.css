@@ -29,13 +29,33 @@ body{
     background-color: rgb(195, 245, 195);
     width: 670px;
     height: 600px;
+    z-index: 100;
 }
 
-#about-me-content{
+#about-me-content, #system-app-content, #paint-app-content, #notes-app-content{
     display: none;
 }
 
-#welcome-pageheader, #abme-pageheader{
+#paint-app-content{
+    position: absolute; top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+    border: solid green;
+    background-color: rgb(195, 245, 195);
+    height:820px;
+    width: 600px;
+    z-index: 100;
+}
+
+#paint-title{
+    margin-left: -20px;
+}
+
+#itsa-me{
+    height: 250px;
+    width: 250px;
+}
+
+#welcome-pageheader, #abmepageheader, #paintappheader{
     width:670px;
     height: 25px;
     background-color: green;
@@ -45,7 +65,11 @@ body{
     justify-content: end;
 }
 
-#welcome-pageclose, #abme-pageclose{
+#paintappheader{
+    width: 600px;
+}
+
+#welcome-pageclose, #abmepageclose, #paintappclose{
     height: 22px;
     width: 22px;
     margin-top: -1px;
@@ -80,8 +104,7 @@ body{
     cursor: pointer;
 }
 
-#welcome-title, #abme-title{
-    margin-top: 40px;
+#welcome-title, #abme-title, #paint-title{
     height: 55px;
     width: 700px;
     display: flex;
@@ -92,8 +115,78 @@ body{
     justify-content: center;
 }
 
-#welcome-2, #abme-title-1{
+#welcome-title{
+    margin-top: 40px;
+}
+
+#abme-title, #paint-title{
+    margin-top: 10px;
+}
+
+#welcome-2, #abme-title-1, #paint-title-1{
     color: rgb(155, 206, 84);
+}
+
+.canvas{
+    display: grid;
+    background-color: white;
+    border: 3px solid black;
+    grid-template-columns: repeat(20, 30px);
+    grid-template-rows: repeat(20, 30px);
+}
+
+.pixel{
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid rgb(219, 217, 217);
+}
+
+#modifiers{
+    margin-top: 20px;
+}
+
+#reset-canvas, #set-eraser{
+    font-family: text;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#reset-canvas{
+    width: 80px;
+}
+
+#set-eraser{
+    width: 70px;
+}
+
+#colorer{
+    height: 30px;
+    width: 235px;
+    margin-top: 10px;
+    align-items: center;
+    padding-left: 182px;
+}
+
+#pick-color, #chosen-color{
+    width: 135px;
+    font-family: text;
+    align-items: center;
+    width: 130px;
+    gap: 3px;
+}
+
+#chosen-color{
+    font-size: 20px;
+    border: 1px solid black;
+    cursor: pointer;
+    height:  35px;
+}
+
+.eraser-set{
+    background-color: gray;
 }
 
 #hello-solosis{
@@ -112,6 +205,17 @@ body{
     color: rgb(37, 136, 37);
     margin-left: 95px;
     margin-top: -5px;
+}
+
+#my-info{
+    font-family: text;
+    height: 50px;
+    width: 500px;
+    font-size: 20px;
+    color: rgb(37, 136, 37);
+    margin-left: 75px;
+    margin-top: -5px;
+    text-align: left;
 }
 
 #find-me{

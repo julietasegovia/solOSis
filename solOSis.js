@@ -95,9 +95,9 @@ function handleIconChoosing(element, window){
     }
 }
 
-var abmeWindow = document.querySelector("#about-me-content");
-var sysWindow = document.querySelector("#system-app-content");
-var pntWindow = document.querySelector("#paint-app-content");
+var abmepage = document.querySelector("#about-me-content");
+var systemapp = document.querySelector("#system-app-content");
+var paintapp = document.querySelector("#paint-app-content");
 var ntsWindow = document.querySelector("#notes-app-content");
 
 const abmeIcon = document.querySelector("#about-logo");
@@ -105,23 +105,112 @@ const sysIcon = document.querySelector("#system-logo");
 const pntIcon = document.querySelector("#paint-logo");
 const ntsIcon = document.querySelector("#note-logo");
 
+var abmeClose = document.querySelector("#abmepageclose");
+var pntClose = document.querySelector("#paintappclose")
+
 abmeIcon.addEventListener("click", () => {
-    handleIconChoosing(abmeIcon, abmeWindow);
+    handleIconChoosing(abmeIcon, abmepage);
 });
 
 sysIcon.addEventListener("click", () => {
-    handleIconChoosing(sysIcon, sysWindow);
+    handleIconChoosing(sysIcon, systemapp);
 });
 
 pntIcon.addEventListener("click", () => {
-    handleIconChoosing(pntIcon, pntWindow);
+    handleIconChoosing(pntIcon, paintapp);
 });
 
 ntsIcon.addEventListener("click", () => {
     handleIconChoosing(ntsIcon, ntsWindow);
 });
 
-dragElement(abmeWindow);
-dragElement(sysWindow);
-dragElement(pntWindow);
+dragElement(abmepage);
+dragElement(systemapp);
+dragElement(paintapp);
 dragElement(ntsWindow);
+
+abmeClose.addEventListener("click", () => {
+    closeWindow(abmepage);
+})
+
+pntClose.addEventListener("click", () => {
+    closeWindow(paintapp);
+})
+
+const grid = document.querySelector("#canvas");
+const resetButton = document.querySelector("#reset-canvas");
+const setEraser = document.querySelector("#set-eraser");
+const chosenColor = document.querySelector("#chosen-color");
+
+let isDragging = false;
+let isErasing = false;
+let cells = [];
+let trueColor = "rgb(255, 0, 0)";
+
+for(let row = 0; row < 20; row++){
+    for(let col = 0; col < 20; col++){
+        const cell = document.createElement('div');
+        cell.classList.add('pixel');
+        cell.dataset.row = row;
+        cell.dataset.col = col;
+        grid.appendChild(cell);
+        cells.push(cell);
+    }
+}
+
+function cellMode(cell){
+    if(isErasing){
+        cell.style.backgroundColor = "rgb(255, 255, 255)";
+        cell.style.borderColor = "rgb(219, 217, 217)"
+    }
+    else{
+        cell.style.backgroundColor = trueColor;
+        cell.style.borderColor = trueColor;        
+    }
+}
+
+chosenColor.addEventListener("input", (e) => {
+    trueColor = e.target.value;
+
+    if(isErasing){
+        setEraser.classList.remove('eraser-set');
+        isErasing = false;
+    }
+});
+
+cells.forEach(cell => {
+    cell.addEventListener('mousedown', (e) => { //when a cell is clicked, draw or erase dpending on cell mode
+        e.preventDefault();
+        isDragging = true;
+        cellMode(cell);
+    });
+
+    cell.addEventListener('mouseenter', () => { //enables infinite dragging
+        if(isDragging)
+            cellMode(cell);
+    });
+
+    cell.addEventListener('mouseup', (e) => { //stops drawing/erasing when user stops dragging the mouse
+        isDragging = false;
+    });
+})
+
+resetButton.addEventListener("click", () =>{
+    cells.forEach(cell => {
+        cell.style.backgroundColor = "rgb(255, 255, 255)";
+        cell.style.borderColor = "rgb(219, 217, 217)"
+        setEraser.classList.remove('eraser-set');
+        isErasing = false;
+    });
+})
+
+setEraser.addEventListener("click", () =>{
+    if(isErasing){ //disables erasing
+        setEraser.classList.remove('eraser-set');
+        isErasing = false;
+    }
+    else{ //enables erasing
+        setEraser.classList.add('eraser-set');
+        isErasing = true;
+    }
+})
