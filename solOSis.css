@@ -1,0 +1,74 @@
+@font-face {
+    font-family: titulin;
+    src: url(pixw.ttf);
+}
+
+@font-face {
+    font-family: text;
+    src: url(text.otf);
+}
+
+@keyframes spini{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+body{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.welcome-page{
+    width: 700px;
+    height: 600px;
+}
+
+#welcome-title{
+    height: 55px;
+    width: 700px;
+    display: flex;
+    font-family: titulin;
+    color: rgb(54, 184, 54);
+    align-items: center;
+    font-size: 50px;
+    justify-content: center;
+}
+
+#welcome-2{
+    color: rgb(167, 224, 167);
+}
+
+#hello-solosis{
+    animation: spini;
+    animation-duration: 4s;
+    height: 300px;
+    width: 300px;
+}
+
+#introduction, #find-me{
+    font-family: text;
+    height: 50px;
+    width: 500px;
+    font-size: 20px;
+    color: rgb(37, 136, 37);
+    margin-left: 95px;
+}
+
+.find-me-buttons{
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-left: 190px;
+    margin-top: -30px;
+}
+
+#my-github, #my-twitter, #my-slack{
+    width: 30px;
+    height: 30px;
+}
