@@ -159,28 +159,19 @@ body{
     color: rgb(155, 206, 84);
 }
 
-#title-note, #content-note{
-    width: 450px;
-    height: 50px;
-    font-family: text;
-    font-size: 30px;
-    border: 3px solid rgb(113, 168, 103);
-    color: rgb(113, 168, 103);
-    display: flex;
-    align-items: center;
-    margin-left: 110px;
-    cursor: pointer;
+#notes-title{
+    margin-left: -10px;
 }
 
-#content-note{
-    margin-top: 10px;
-    height: 400px;
-    font-size: 25px;
+#note-writer{
+    align-items: center;
 }
 
 #title-here, #note-here{
+    width: 450;
+    padding-left: 20px;
+    cursor: text;
     height: 44px;
-    width: 444px;
     font-family: text;
     font-size: 30px;
     border: 0px;
@@ -188,14 +179,23 @@ body{
     margin: 0;
     text-align: left;
     line-height: normal;
+    background-color: rgb(195, 245, 195);
+    outline: none;
+    box-sizing: border-box;
+}
+
+#title-here{
+    color: green;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
 }
 
 #note-here{
+    margin-top: 20px;
     height: 394px;
     font-size: 25px;
     display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
+    justify-content: center;
 }
 
 .canvas{

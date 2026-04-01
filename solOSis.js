@@ -275,14 +275,31 @@ screenDisplay.textContent = screenRes;
 osVer.textContent = osVersion;
 timeZone.textContent = userTimeZone;
 
-let notetitle = document.querySelector("#title-note");
-let notecontent = document.querySelector("#content-note");
 let titletext = document.querySelector("#title-here");
 let contenttext = document.querySelector("#note-here");
 
-titletext.placeholder = "Your note title here...";
-contenttext.placeholder = "Your note here...";
+function editText(el){
+    el.style.width = el.offsetWidth + "px";
+    el.style.height = el.offsetHeight + "px";
+    el.textContent = "";
+    el.setAttribute("contenteditable", "true");
+    el.focus();
 
-notetitle.addEventListener("click", () => {
-    titletext.textContent = "";
+    const range = document.createRange();
+    range.selectNodeContents(el);
+    range.collapse(false);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+}
+
+titletext.addEventListener("click", () => editText(titletext));
+contenttext.addEventListener("click", () => editText(contenttext));
+
+titletext.addEventListener("blur", () =>{
+    titletext.removeAttribute("contenteditable");
+});
+
+contenttext.addEventListener("blur", () => {
+    contenttext.removeAttribute("contenteditable");
 })
