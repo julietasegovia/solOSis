@@ -34,7 +34,7 @@ body{
 
 #systemapp{
     width: 450px;
-    height: 470px;
+    height: 420px;
     font-family: text;
     font-size: 25px;
     color: rgb(37, 136, 37);
@@ -46,13 +46,13 @@ body{
     margin-left: 15px;
 }
 
-#device, #browser, #screen, #time-zone, #os-ver{
+#browser, #screen, #time-zone, #os-ver{
     display: flex;
     justify-content: left;
     gap: 10px;
 }
 
-#dev2, #bsw2, #scr2, #tz2, #osv2{
+#bws2, #scr2, #tz2, #osv2{
     color: rgb(39, 187, 39);
 }
 
