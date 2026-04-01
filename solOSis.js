@@ -95,10 +95,10 @@ function handleIconChoosing(element, window){
     }
 }
 
-var abmepage = document.querySelector("#about-me-content");
-var systemapp = document.querySelector("#system-app-content");
-var paintapp = document.querySelector("#paint-app-content");
-var ntsWindow = document.querySelector("#notes-app-content");
+var abmepage = document.querySelector("#abmepage");
+var systemapp = document.querySelector("#systemapp");
+var paintapp = document.querySelector("#paintapp");
+var notesapp = document.querySelector("#notesapp");
 
 const abmeIcon = document.querySelector("#about-logo");
 const sysIcon = document.querySelector("#system-logo");
@@ -106,7 +106,8 @@ const pntIcon = document.querySelector("#paint-logo");
 const ntsIcon = document.querySelector("#note-logo");
 
 var abmeClose = document.querySelector("#abmepageclose");
-var pntClose = document.querySelector("#paintappclose")
+var pntClose = document.querySelector("#paintappclose");
+var sysClose = document.querySelector("#systemappclose");
 
 abmeIcon.addEventListener("click", () => {
     handleIconChoosing(abmeIcon, abmepage);
@@ -121,13 +122,13 @@ pntIcon.addEventListener("click", () => {
 });
 
 ntsIcon.addEventListener("click", () => {
-    handleIconChoosing(ntsIcon, ntsWindow);
+    handleIconChoosing(ntsIcon, notesapp);
 });
 
 dragElement(abmepage);
 dragElement(systemapp);
 dragElement(paintapp);
-dragElement(ntsWindow);
+dragElement(notesapp);
 
 abmeClose.addEventListener("click", () => {
     closeWindow(abmepage);
@@ -135,6 +136,10 @@ abmeClose.addEventListener("click", () => {
 
 pntClose.addEventListener("click", () => {
     closeWindow(paintapp);
+})
+
+sysClose.addEventListener("click", () => {
+    closeWindow(systemapp);
 })
 
 const grid = document.querySelector("#canvas");
@@ -160,8 +165,8 @@ for(let row = 0; row < 20; row++){
 
 function cellMode(cell){
     if(isErasing){
-        cell.style.backgroundColor = "rgb(255, 255, 255)";
-        cell.style.borderColor = "rgb(219, 217, 217)"
+        cell.style.backgroundColor = "rgb(240, 255, 236)";
+        cell.style.borderColor = "rgb(220, 255, 210)";
     }
     else{
         cell.style.backgroundColor = trueColor;
@@ -197,8 +202,8 @@ cells.forEach(cell => {
 
 resetButton.addEventListener("click", () =>{
     cells.forEach(cell => {
-        cell.style.backgroundColor = "rgb(255, 255, 255)";
-        cell.style.borderColor = "rgb(219, 217, 217)"
+        cell.style.backgroundColor = "rgb(240, 255, 236)";
+        cell.style.borderColor = "rgb(220, 255, 210)"
         setEraser.classList.remove('eraser-set');
         isErasing = false;
     });

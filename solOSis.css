@@ -22,7 +22,7 @@ body{
     text-align: center;
 }
 
-#welcome-page, #about-me-content{
+#welcome-page, #abmepage, #systemapp{
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
     border: solid green;
@@ -32,11 +32,35 @@ body{
     z-index: 100;
 }
 
-#about-me-content, #system-app-content, #paint-app-content, #notes-app-content{
+#systemapp{
+    width: 450px;
+    height: 470px;
+    font-family: text;
+    font-size: 25px;
+    color: rgb(37, 136, 37);
+}
+
+#system-info{
+    justify-content: left;
+    text-align: left;
+    margin-left: 15px;
+}
+
+#device, #browser, #screen, #time-zone, #os-ver{
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
+
+#dev2, #bsw2, #scr2, #tz2, #osv2{
+    color: rgb(39, 187, 39);
+}
+
+#abmepage, #systemapp, #paintapp, #notes-app-content{
     display: none;
 }
 
-#paint-app-content{
+#paintapp{
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
     border: solid green;
@@ -50,12 +74,16 @@ body{
     margin-left: -20px;
 }
 
+#system-title{
+    margin-left: -115px;
+}
+
 #itsa-me{
     height: 250px;
     width: 250px;
 }
 
-#welcome-pageheader, #abmepageheader, #paintappheader{
+#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader{
     width:670px;
     height: 25px;
     background-color: green;
@@ -65,11 +93,15 @@ body{
     justify-content: end;
 }
 
+#systemappheader{
+    width: 450px;
+}
+
 #paintappheader{
     width: 600px;
 }
 
-#welcome-pageclose, #abmepageclose, #paintappclose{
+#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose{
     height: 22px;
     width: 22px;
     margin-top: -1px;
@@ -104,7 +136,7 @@ body{
     cursor: pointer;
 }
 
-#welcome-title, #abme-title, #paint-title{
+#welcome-title, #abme-title, #paint-title, #system-title{
     height: 55px;
     width: 700px;
     display: flex;
@@ -119,26 +151,25 @@ body{
     margin-top: 40px;
 }
 
-#abme-title, #paint-title{
+#abme-title, #paint-title, #system-title{
     margin-top: 10px;
 }
 
-#welcome-2, #abme-title-1, #paint-title-1{
+#welcome-2, #abme-title-1, #paint-title-1, #system-title-1{
     color: rgb(155, 206, 84);
 }
 
 .canvas{
     display: grid;
     background-color: white;
-    border: 3px solid black;
     grid-template-columns: repeat(20, 30px);
     grid-template-rows: repeat(20, 30px);
 }
 
 .pixel{
-    background-color: white;
+    background-color: rgb(240, 255, 236);
     cursor: pointer;
-    border: 1px solid rgb(219, 217, 217);
+    border: 1px solid rgb(220, 255, 210);
 }
 
 #modifiers{
