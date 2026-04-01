@@ -22,7 +22,7 @@ body{
     text-align: center;
 }
 
-#welcome-page, #abmepage, #systemapp{
+#welcome-page, #abmepage, #systemapp, #notesapp{
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
     border: solid green;
@@ -56,7 +56,7 @@ body{
     color: rgb(39, 187, 39);
 }
 
-#abmepage, #systemapp, #paintapp, #notes-app-content{
+#abmepage, #systemapp, #paintapp, #notesapp{
     display: none;
 }
 
@@ -83,7 +83,7 @@ body{
     width: 250px;
 }
 
-#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader{
+#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader, #notesappheader{
     width:670px;
     height: 25px;
     background-color: green;
@@ -101,7 +101,7 @@ body{
     width: 600px;
 }
 
-#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose{
+#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose, #notesappclose{
     height: 22px;
     width: 22px;
     margin-top: -1px;
@@ -136,7 +136,7 @@ body{
     cursor: pointer;
 }
 
-#welcome-title, #abme-title, #paint-title, #system-title{
+#welcome-title, #abme-title, #paint-title, #system-title, #notes-title{
     height: 55px;
     width: 700px;
     display: flex;
@@ -151,12 +151,51 @@ body{
     margin-top: 40px;
 }
 
-#abme-title, #paint-title, #system-title{
+#abme-title, #paint-title, #system-title, #notes-title{
     margin-top: 10px;
 }
 
-#welcome-2, #abme-title-1, #paint-title-1, #system-title-1{
+#welcome-2, #abme-title-1, #paint-title-1, #system-title-1, #notes-title-1{
     color: rgb(155, 206, 84);
+}
+
+#title-note, #content-note{
+    width: 450px;
+    height: 50px;
+    font-family: text;
+    font-size: 30px;
+    border: 3px solid rgb(113, 168, 103);
+    color: rgb(113, 168, 103);
+    display: flex;
+    align-items: center;
+    margin-left: 110px;
+    cursor: pointer;
+}
+
+#content-note{
+    margin-top: 10px;
+    height: 400px;
+    font-size: 25px;
+}
+
+#title-here, #note-here{
+    height: 44px;
+    width: 444px;
+    font-family: text;
+    font-size: 30px;
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    line-height: normal;
+}
+
+#note-here{
+    height: 394px;
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
 }
 
 .canvas{

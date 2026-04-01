@@ -143,6 +143,10 @@ sysClose.addEventListener("click", () => {
     closeWindow(systemapp);
 })
 
+ntsClose.addEventListener("click", () => {
+    closeWindow(notesapp);
+})
+
 const grid = document.querySelector("#canvas");
 const resetButton = document.querySelector("#reset-canvas");
 const setEraser = document.querySelector("#set-eraser");
@@ -270,3 +274,15 @@ browser.textContent = `${browserName} ${browserVersion}`;
 screenDisplay.textContent = screenRes;
 osVer.textContent = osVersion;
 timeZone.textContent = userTimeZone;
+
+let notetitle = document.querySelector("#title-note");
+let notecontent = document.querySelector("#content-note");
+let titletext = document.querySelector("#title-here");
+let contenttext = document.querySelector("#note-here");
+
+titletext.placeholder = "Your note title here...";
+contenttext.placeholder = "Your note here...";
+
+notetitle.addEventListener("click", () => {
+    titletext.textContent = "";
+})
