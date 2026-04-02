@@ -99,16 +99,19 @@ var abmepage = document.querySelector("#abmepage");
 var systemapp = document.querySelector("#systemapp");
 var paintapp = document.querySelector("#paintapp");
 var notesapp = document.querySelector("#notesapp");
+var calcapp = document.querySelector("#calculatorapp");
 
 const abmeIcon = document.querySelector("#about-logo");
 const sysIcon = document.querySelector("#system-logo");
 const pntIcon = document.querySelector("#paint-logo");
 const ntsIcon = document.querySelector("#note-logo");
+const calcIcon = document.querySelector("#calculator-logo");
 
 var abmeClose = document.querySelector("#abmepageclose");
 var pntClose = document.querySelector("#paintappclose");
 var sysClose = document.querySelector("#systemappclose");
 var ntsClose = document.querySelector("#notesappclose");
+var calcClose = document.querySelector("#calculatorappclose");
 
 abmeIcon.addEventListener("click", () => {
     handleIconChoosing(abmeIcon, abmepage);
@@ -126,10 +129,15 @@ ntsIcon.addEventListener("click", () => {
     handleIconChoosing(ntsIcon, notesapp);
 });
 
+calcIcon.addEventListener("click", () => {
+    handleIconChoosing(calcIcon, calcapp);
+});
+
 dragElement(abmepage);
 dragElement(systemapp);
 dragElement(paintapp);
 dragElement(notesapp);
+dragElement(calcapp);
 
 abmeClose.addEventListener("click", () => {
     closeWindow(abmepage);
@@ -146,6 +154,10 @@ sysClose.addEventListener("click", () => {
 ntsClose.addEventListener("click", () => {
     closeWindow(notesapp);
 })
+
+calcClose.addEventListener("click", () => {
+    closeWindow(calcapp);
+});
 
 const grid = document.querySelector("#canvas");
 const resetButton = document.querySelector("#reset-canvas");
@@ -303,3 +315,12 @@ titletext.addEventListener("blur", () =>{
 contenttext.addEventListener("blur", () => {
     contenttext.removeAttribute("contenteditable");
 })
+
+let calcdisplay = document.querySelector("#display-result");
+let calcbuttons = document.querySelectorAll(".calc-buttons");
+
+calcbuttons.forEach(c => {
+    c.addEventListener("click", () => {
+        calcdisplay.textContent += c.textContent;
+    });
+});

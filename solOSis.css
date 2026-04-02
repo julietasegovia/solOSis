@@ -22,7 +22,7 @@ body{
     text-align: center;
 }
 
-#welcome-page, #abmepage, #systemapp, #notesapp{
+#welcome-page, #abmepage, #systemapp, #notesapp, #calculatorapp{
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
     border: solid green;
@@ -30,6 +30,11 @@ body{
     width: 670px;
     height: 600px;
     z-index: 100;
+}
+
+#calculatorapp{
+    width: 415px;
+    height: 605px;
 }
 
 #systemapp{
@@ -56,8 +61,59 @@ body{
     color: rgb(39, 187, 39);
 }
 
-#abmepage, #systemapp, #paintapp, #notesapp{
+#abmepage, #systemapp, #paintapp, #notesapp, #calculatorapp{
     display: none;
+}
+
+#calc-screen{
+    width: 368px;
+    height: 70px;
+    border: 4px solid green;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.calc-button{
+    font-size: 30px;
+    height: 80px;
+    width: 80px;
+    border: 3px solid green;
+    font-family: text;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: green;
+    cursor: pointer;
+}
+
+#vertical-buttons, #square-buttons{
+    justify-content: space-between;
+}
+
+#square-buttons{
+    height: 370px;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+#vertical-buttons{
+    height: 470px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons{
+    display: flex;
+    margin-top: 10px;
+}
+
+#sum-button, #minus-button, #mult-button, #div-button, #ac-button{
+    background-color: rgb(151, 232, 151);
 }
 
 #paintapp{
@@ -83,7 +139,7 @@ body{
     width: 250px;
 }
 
-#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader, #notesappheader{
+#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader, #notesappheader, #calculatorappheader{
     width:670px;
     height: 25px;
     background-color: green;
@@ -91,6 +147,10 @@ body{
     font-family: text;
     display: flex;
     justify-content: end;
+}
+
+#calculatorappheader{
+    width: 415px;
 }
 
 #systemappheader{
@@ -101,7 +161,7 @@ body{
     width: 600px;
 }
 
-#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose, #notesappclose{
+#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose, #notesappclose, #calculatorappclose{
     height: 22px;
     width: 22px;
     margin-top: -1px;
@@ -324,7 +384,7 @@ body{
     gap: 25px;
 }
 
-#about-me, #system-app, #paint-app, #note-app{
+.apps{
     height: 115px;
     width: 100px;
     display: flex;
