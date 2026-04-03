@@ -349,3 +349,28 @@ calcbuttons.forEach(c => {
         }
     });
 });
+
+const weatherKey = "82f722c631cbfbffada362b344b88e97";
+const weatherUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+let temp = document.querySelector(".temp");
+let city = document.querySelector(".city");
+let humidity = document.querySelector("#humidity");
+let wind = document.querySelector("#wind");
+
+const searchBox = document.querySelector("#search-bar");
+const searchBtn = document.querySelector("#lupa-button")
+
+async function checkWeather(cityname) {
+    const response = await fetch(weatherUrl + cityname + `&appid=${weatherKey}`);
+    var wdata = await response.json();
+
+    city.innerHTML = wdata.name;
+    temp.innerHTML = Math.round(wdata.main.temp) + "°C";
+    humidity.innerHTML = wdata.main.humidity + "%";
+    wind.innerHTML = wdata.wind.speed + "km/h";
+}
+
+searchBtn.addEventListener("click", () => {
+    checkWeather(searchBox.value);
+})

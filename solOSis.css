@@ -57,9 +57,11 @@ body{
     border: 0;
     background-color: rgb(231, 255, 231);
     height: 62px;
+    cursor: pointer;
 }
 
 #lupa-image{
+    cursor: pointer;
     height: 50px;
     width: 40px;
 }
@@ -84,8 +86,6 @@ body{
     color: green;
     font-size: 18px;
 }
-
-
 
 #calculatorapp{
     width: 415px;
