@@ -22,7 +22,7 @@ body{
     text-align: center;
 }
 
-#welcome-page, #abmepage, #systemapp, #notesapp, #calculatorapp{
+#welcome-page, #abmepage, #systemapp, #notesapp, #calculatorapp, #weatherapp{
     position: absolute; top: 50%; left: 50%; 
     transform: translate(-50%, -50%);
     border: solid green;
@@ -31,6 +31,61 @@ body{
     height: 600px;
     z-index: 100;
 }
+
+#weatherapp{
+    width: 550px;
+}
+
+.search{
+    padding-top: 20px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    padding-left: 90px;
+}
+
+#search-bar{
+    border: 0;
+    outline: 0;
+    height: 60px;
+    font-family: text;
+    font-size: 30px;
+    background-color: rgb(231, 255, 231);
+}
+
+#lupa-button{
+    border: 0;
+    background-color: rgb(231, 255, 231);
+    height: 62px;
+}
+
+#lupa-image{
+    height: 50px;
+    width: 40px;
+}
+
+.temp, .city{
+    font-family: text;
+    color: green;
+}
+
+.temp{
+    margin-top: -7px;
+    font-size: 35px;
+    text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff,
+             1px 1px #fff, -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+#details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: text;
+    color: green;
+    font-size: 18px;
+}
+
+
 
 #calculatorapp{
     width: 415px;
@@ -61,16 +116,26 @@ body{
     color: rgb(39, 187, 39);
 }
 
-#abmepage, #systemapp, #paintapp, #notesapp, #calculatorapp{
+#abmepage, #systemapp, #paintapp, #notesapp, #calculatorapp, #weatherapp{
     display: none;
 }
 
 #calc-screen{
+    background-color: #e1ffef;
     width: 368px;
     height: 70px;
     border: 4px solid green;
     margin-top: 10px;
     margin-left: 20px;
+    align-items: center;
+    display: flex;
+}
+
+#display-result{
+    margin-left: 5px;
+    font-family: text;
+    font-size: 35px;
+    color: green;
 }
 
 .calc-button{
@@ -139,7 +204,7 @@ body{
     width: 250px;
 }
 
-#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader, #notesappheader, #calculatorappheader{
+#welcome-pageheader, #abmepageheader, #paintappheader, #systemappheader, #notesappheader, #calculatorappheader, #weatherappheader{
     width:670px;
     height: 25px;
     background-color: green;
@@ -147,6 +212,10 @@ body{
     font-family: text;
     display: flex;
     justify-content: end;
+}
+
+#weatherappheader{
+    width: 550px;
 }
 
 #calculatorappheader{
@@ -161,7 +230,7 @@ body{
     width: 600px;
 }
 
-#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose, #notesappclose, #calculatorappclose{
+#welcome-pageclose, #abmepageclose, #paintappclose, #systemappclose, #notesappclose, #calculatorappclose, #weatherappclose{
     height: 22px;
     width: 22px;
     margin-top: -1px;

@@ -61,6 +61,10 @@
                 <img id="calculator-logo" src="calcu.png">
                 <p>Calculator.exe</p>
             </div>
+            <div id="weather-app" class="apps">
+                <img id="weather-logo" src="weather.png">
+                <p>Weather.exe</p>
+            </div>
             <div class="selected-app"></div>
         </div>
 
@@ -153,7 +157,7 @@
                 <p id="calculatorappclose">X</p>
             </div>
             <div id="calc-screen">
-                <p id="display-result">_</p>
+                <p id="display-result"></p>
             </div>
             <div id="buttons">
                 <div id="vertical-buttons">
@@ -178,6 +182,37 @@
                     <div id="result-button" class="calc-button">=</div>
                 </div>
             </div>
+            </div>
+
+            <div id="weatherapp">
+                <div id="weatherappheader">
+                    <p id="weatherappclose">X</p>
+                </div>
+                    <div class = "search">
+                        <input id="search-bar" placeholder="lookup city" ="text">
+                        <button id="lupa-button"><img src="images/search.png" id="lupa-image"></button>
+                    </div>
+                <div id="true-weather">
+                    <img src="images/clear.png" class="weather-image">
+                    <h1 class="temp">24°C</h1>
+                    <h2 class="city">Rosario</h2>
+                    <div id="details">
+                        <div class="col">
+                            <img src="images/humidity.png">
+                            <div>
+                                <p id="humidity">80%</p>
+                                <p>Humidity</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <img src="images/wind.png">
+                            <div>
+                                <p id="wind">15 km/h</p>
+                                <p>Wind Speed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

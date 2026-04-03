@@ -100,18 +100,21 @@ var systemapp = document.querySelector("#systemapp");
 var paintapp = document.querySelector("#paintapp");
 var notesapp = document.querySelector("#notesapp");
 var calcapp = document.querySelector("#calculatorapp");
+var wthapp = document.querySelector("#weatherapp");
 
 const abmeIcon = document.querySelector("#about-logo");
 const sysIcon = document.querySelector("#system-logo");
 const pntIcon = document.querySelector("#paint-logo");
 const ntsIcon = document.querySelector("#note-logo");
 const calcIcon = document.querySelector("#calculator-logo");
+const wthIcon = document.querySelector("#weather-logo");
 
 var abmeClose = document.querySelector("#abmepageclose");
 var pntClose = document.querySelector("#paintappclose");
 var sysClose = document.querySelector("#systemappclose");
 var ntsClose = document.querySelector("#notesappclose");
 var calcClose = document.querySelector("#calculatorappclose");
+var wthClose = document.querySelector("#weatherappclose");
 
 abmeIcon.addEventListener("click", () => {
     handleIconChoosing(abmeIcon, abmepage);
@@ -133,11 +136,16 @@ calcIcon.addEventListener("click", () => {
     handleIconChoosing(calcIcon, calcapp);
 });
 
+wthIcon.addEventListener("click", () => {
+    handleIconChoosing(wthIcon, wthapp);
+});
+
 dragElement(abmepage);
 dragElement(systemapp);
 dragElement(paintapp);
 dragElement(notesapp);
 dragElement(calcapp);
+dragElement(wthapp);
 
 abmeClose.addEventListener("click", () => {
     closeWindow(abmepage);
@@ -158,6 +166,10 @@ ntsClose.addEventListener("click", () => {
 calcClose.addEventListener("click", () => {
     closeWindow(calcapp);
 });
+
+wthClose.addEventListener("click", () => {
+    closeWindow(wthapp);
+})
 
 const grid = document.querySelector("#canvas");
 const resetButton = document.querySelector("#reset-canvas");
@@ -317,10 +329,23 @@ contenttext.addEventListener("blur", () => {
 })
 
 let calcdisplay = document.querySelector("#display-result");
-let calcbuttons = document.querySelectorAll(".calc-buttons");
+let calcbuttons = document.querySelectorAll(".calc-button");
 
 calcbuttons.forEach(c => {
     c.addEventListener("click", () => {
-        calcdisplay.textContent += c.textContent;
+        if(c.textContent === "AC")
+            calcdisplay.textContent = "";
+        else if(c.textContent === "="){
+            try{
+                calcdisplay.textContent = eval(calcdisplay.textContent);
+            } catch{
+                calcdisplay.textContent = "Error"
+            }
+        }
+        else{
+            if(calcdisplay.textContent === "")
+                calcdisplay.textContent = "";
+            calcdisplay.textContent += c.textContent;
+        }
     });
 });
